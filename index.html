@@ -9,11 +9,18 @@
 	  transform: translate(-50%, -50%);
 	  padding: 10px;
 	}
+	body {
+		background-image: url('lux.jpg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		// background-position: center center;
+	}
 	</style>
 </head>
 <body>
     <div id="div" class="center">
-	<img id="initialImg" src="test.jpg" onclick="start()">
+	<img id="initialImg" src="test.png" onclick="start()">
     <img id="gif" src="test.gif" style="display: none;">
     <img id="finalImg" src="" style="display: none;">
 	</div>
