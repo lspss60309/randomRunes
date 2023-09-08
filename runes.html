@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head> 
+	<style>
+	.center {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  padding: 10px;
+	}
+	</style>
+</head>
+<body>
+    <div id="div" class="center">
+	<img id="initialImg" src="test.jpg" onclick="start()">
+    <img id="gif" src="test.gif" style="display: none;">
+    <img id="finalImg" src="" style="display: none;">
+	</div>
+	
+	<script type="text/javascript">
+		var img = ['./rune1.jpg', './rune2.jpg'];
+		
+		function RI(imgArr) {
+			var num = Math.floor(Math.random() * imgArr.length);
+			var di = document.getElementById("finalImg");
+			di.src = imgArr[num];
+			di.style.display = 'none';
+			document.close();
+		}
+        
+		RI(img)
+		
+		var gifPlaying = false;
+
+        function start() {
+            var initialImg = document.getElementById("initialImg");
+            var gif = document.getElementById("gif");
+            var finalImg = document.getElementById("finalImg");
+			document.close();
+			
+            if (!gifPlaying) {
+                initialImg.style.display = "none";
+                gif.style.display = "block";
+                finalImg.style.display = "none";
+
+                setTimeout(function() {
+					gif.style.display = "none";
+					finalImg.style.display = "block";
+                }, 1400);
+            }
+        }
+    </script>
+</body>
+</html>
